@@ -8,7 +8,7 @@ interface ReceiptDetailsProps {
 export default async function ReceiptDetails({
     params,
 }: ReceiptDetailsProps) {
-    const { id } = params
+    const { id } = await params;
     const recipe = await getRecipe(id);
 
     return (
