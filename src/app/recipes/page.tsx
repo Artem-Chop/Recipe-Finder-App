@@ -5,11 +5,11 @@ import { RecipesSearchParams } from "@/interfaces/recipes";
 import { Suspense } from "react";
 
 interface RecipesProps {
-	searchParams: RecipesSearchParams
+	searchParams: Promise<RecipesSearchParams> 
 }
 
 export default async function Recipes({searchParams}: RecipesProps) {
-	const recipes = await getReceipts(searchParams)
+	const recipes = await getReceipts( await searchParams)
 	return (
 			<main>
 				<Suspense fallback={<div>Loading...</div>}>

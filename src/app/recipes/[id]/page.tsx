@@ -1,14 +1,15 @@
 import { getRecipe } from "@/api/request";
+import Image from "next/image";
 import Link from "next/link";
 
 interface ReceiptDetailsProps {
-    params: { id: string }
+    params: Promise<{ id: string }>
 }
 
 export default async function ReceiptDetails({
     params,
 }: ReceiptDetailsProps) {
-    const { id } = await params;
+    const { id } = await  params;
     const recipe = await getRecipe(id);
 
     return (
@@ -19,7 +20,7 @@ export default async function ReceiptDetails({
                 <Link href="/" >Back to Home</Link>
             </button>
             <h1 className="text-3xl font-bold mb-4">{recipe.title}</h1>
-            <img src={recipe.image} alt={recipe.title} className="w-full h-60 object-cover rounded-md mb-4" />
+            <img src={recipe.image} alt={recipe.title}  className="w-110 h-70 object-cover rounded-md mb-4" />
             <h2 className="text-2xl font-semibold mb-2">Ingredients</h2>
             <ul className="list-disc pl-5">
                 {recipe.extendedIngredients?.map((ingredient) => (

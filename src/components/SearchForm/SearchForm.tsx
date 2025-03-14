@@ -8,7 +8,6 @@ import { useRef } from "react"
 
 export default function SearchForm() {
     const formRef = useRef<any>(null)
-    // const { replace } = useRouter();
 
     const onSubmit = (event: any) => {
         event.preventDefault();
@@ -32,8 +31,6 @@ export default function SearchForm() {
                             ? "bg-blue-500 hover:bg-blue-700"
                             : "bg-gray-300 cursor-not-allowed"
                             }`}
-                        // disabled={!dish && !cuisine && !maxTime}
-                        // onClick={handleSearch}
                     >
                         Next
                     </button>
