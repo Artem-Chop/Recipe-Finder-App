@@ -1,8 +1,12 @@
-'use client';
+"use client";
 
 import { useSearchParams } from "next/navigation";
 
-export default function PreparationTime({ placeholder }: { placeholder: string }) {
+export default function PreparationTime({
+  placeholder,
+}: {
+  placeholder: string;
+}) {
   const searchParams = useSearchParams();
 
   return (
@@ -11,7 +15,7 @@ export default function PreparationTime({ placeholder }: { placeholder: string }
       name="mins"
       className="w-full p-2 border border-gray-300 rounded mb-4"
       placeholder={placeholder}
-      defaultValue={searchParams.get('mins')?.toString()}
+      defaultValue={searchParams.get("mins")?.toString()}
     />
   );
 }
