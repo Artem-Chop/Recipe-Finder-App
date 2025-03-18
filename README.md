@@ -1,5 +1,6 @@
 Recipe Finder App
 Overview
+
 The Recipe Finder App is a Next.js application that allows users to search for recipes based on keywords, cuisine type, and preparation time. The app fetches data from the Spoonacular API and displays results with a user-friendly interface.
 Features
 •	Recipe Search: Users can search by dish name, cuisine type, or maximum preparation time.
